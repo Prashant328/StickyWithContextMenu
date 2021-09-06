@@ -1,0 +1,36 @@
+<div class="stickyContainer">
+  <div
+    class="stickyCard"
+    *ngFor="let item of items; let i = index"
+    (dblclick)="enableEditMode(item)"
+    (contextmenu)="onContextMenu($event, item)"
+    cdkDrag
+  >
+    <label *ngIf="item.mode === 'view'">{{ item.name }}</label>
+    <textarea
+      class="stickyTextArea"
+      *ngIf="item.mode === 'edit'"
+      placeholder="New sticky"
+      [(ngModel)]="item.name"
+      (keyup.enter)="onEnterPressHandler()"
+    ></textarea>
+  </div>
+</div>
+
+<div
+  style="visibility: hidden; position: fixed"
+  [style.left]="contextMenuPosition.x"
+  [style.top]="contextMenuPosition.y"
+  [matMenuTriggerFor]="contextMenu"
+></div>
+<mat-menu #contextMenu="matMenu">
+  <ng-template matMenuContent let-item="item">
+    <button mat-menu-item (click)="onContextMenuAddHandler()">Add</button>
+    <button mat-menu-item (click)="onContextMenuMoveFrontHandler(item)">
+      To Front
+    </button>
+    <button mat-menu-item (click)="onContextMenuMoveBackHandler(item)">
+      To Back
+    </button>
+  </ng-template>
+</mat-menu>

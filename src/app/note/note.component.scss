@@ -1,0 +1,26 @@
+.stickyCard {
+  background-color: yellow;
+  width: 200px;
+  height: 200px;
+  border: 1px solid;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  position: absolute;
+  cursor: grab;
+}
+
+label {
+  word-break: break-all;
+}
+
+.stickyTextArea{
+  width: 98%;
+  height: 98%;
+  background-color: yellow;
+}
