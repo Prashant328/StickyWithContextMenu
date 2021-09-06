@@ -41,7 +41,7 @@ Angular material used for creating right click context-menu options and draggabl
 
 1. We have used a plain div to create boxes for Sticky and inside that we have used label and textarea as below-
 
-##<div>
+<div>
   <label></label>
   <textarea></textarea>
 </div>
@@ -58,4 +58,4 @@ textarea - To make sticky text editable in edit mode only.
    name- default/editable text for Sticky
    mode- To control mode (view/edit) of Sticky (default mode- view)
 
-3. If inupt field is focused of any Sticky item then on press of enter buton from keybord, edit mode will be changed to view mode.
+3. If inupt textarea field is focused of any Sticky item then on press of enter buton from keybord, edit mode will be changed to view mode.
